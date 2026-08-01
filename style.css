@@ -141,17 +141,16 @@ nav a:hover{
    DASHBOARD
    ================================ */
 
-.dashboard{
+    .dashboard{
 
     width:90%;
+    max-width:1000px;
 
-    max-width:1200px;
-
-    margin:40px auto;
+    margin:50px auto;
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:repeat(3,1fr);
 
     gap:25px;
 
@@ -181,11 +180,17 @@ nav a:hover{
 
 .card:hover{
 
-    transform:translateY(-10px);
+    transform:
+        translateY(-10px)
+        scale(1.03);
 
-    background:#ffdced;
+    background:rgba(255,255,255,.75);
+
+    box-shadow:
+        0 25px 50px rgba(255,79,154,.18);
 
 }
+
 
 .quote{
 
@@ -254,4 +259,4 @@ nav a:hover{
 
     align-items:center;
 
-}s
+}
