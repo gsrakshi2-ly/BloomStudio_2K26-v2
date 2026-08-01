@@ -1,64 +1,188 @@
+/* ================================
+   BLOOM STUDIO V1.1
+   ================================ */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
+    font-family:"Segoe UI",sans-serif;
 }
 
 body{
-    background:linear-gradient(135deg,#ffe6f2,#ffeef8,#fff8fc);
+
+    background:linear-gradient(135deg,#FFE6F2,#FFF5E6,#EAF7F1);
+
     min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+
+    color:#444;
+
 }
+
+/* ================================
+   NAVBAR
+   ================================ */
+
+header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 60px;
+
+    background:rgba(255,255,255,.6);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+    position:sticky;
+
+    top:0;
+
+}
+
+.logo{
+
+    font-size:30px;
+
+    font-weight:bold;
+
+    color:#ff4f9a;
+
+}
+
+nav{
+
+    display:flex;
+
+    gap:30px;
+
+}
+
+nav a{
+
+    text-decoration:none;
+
+    color:#555;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+nav a:hover{
+
+    color:#ff4f9a;
+
+}
+
+/* ================================
+   HERO
+   ================================ */
+
+.hero{
+
+    text-align:center;
+
+    padding:70px 20px;
+
+}
+
+.hero h1{
+
+    font-size:50px;
+
+    color:#ff4f9a;
+
+}
+
+.hero p{
+
+    margin-top:15px;
+
+    font-size:22px;
+
+    color:#666;
+
+}
+
+/* ================================
+   CLOCK
+   ================================ */
+
+#clock{
+
+    margin-top:30px;
+
+    font-size:42px;
+
+    font-weight:bold;
+
+    color:#444;
+
+}
+
+#date{
+
+    margin-top:10px;
+
+    font-size:20px;
+
+    color:#888;
+
+}
+
+/* ================================
+   DASHBOARD
+   ================================ */
 
 .dashboard{
+
     width:90%;
-    max-width:900px;
-    background:rgba(255,255,255,.6);
-    backdrop-filter:blur(20px);
-    border-radius:30px;
-    padding:40px;
-    box-shadow:0 15px 35px rgba(0,0,0,.15);
-}
 
-h1{
-    color:#ff4f9a;
-    font-size:42px;
-}
+    max-width:1200px;
 
-h2{
-    margin-top:10px;
-    color:#555;
-    font-weight:400;
-}
+    margin:40px auto;
 
-.cards{
-    margin-top:40px;
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
-    gap:20px;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
 }
 
 .card{
-    background:white;
-    border-radius:20px;
-    padding:35px;
-    text-align:center;
-    font-size:40px;
-    cursor:pointer;
-    transition:.3s;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
 
-.card p{
-    margin-top:15px;
-    font-size:18px;
-    color:#444;
+    background:rgba(255,255,255,.7);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:25px;
+
+    padding:45px;
+
+    text-align:center;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
 }
 
 .card:hover{
-    transform:translateY(-10px) scale(1.05);
-    background:#ffd8ea;
+
+    transform:translateY(-10px);
+
+    background:#ffdced;
+
 }
