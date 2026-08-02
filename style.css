@@ -420,3 +420,27 @@ nav a:hover{
     box-shadow:0 10px 20px rgba(0,0,0,.08);
 
 }
+
+.completed{
+
+    text-decoration:line-through;
+
+    color:gray;
+
+    opacity:.6;
+
+}
+
+.planner li button{
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    margin-left:10px;
+
+}
