@@ -33,19 +33,28 @@
 
 <section class="planner">
 
-    <input
-        type="text"
-        id="taskInput"
-        placeholder="Enter a task...">
+    <div class="planner-box">
 
-    <button onclick="addTask()">
-        Add Task
-    </button>
+        <h2>✨ Today's Tasks</h2>
 
-    <ul id="taskList"></ul>
+        <div class="task-input">
+
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="What do you want to do today?">
+
+            <button onclick="addTask()">
+                ➕ Add
+            </button>
+
+        </div>
+
+        <ul id="taskList"></ul>
+
+    </div>
 
 </section>
-
 <script src="planner.js"></script>
 
 </body>
