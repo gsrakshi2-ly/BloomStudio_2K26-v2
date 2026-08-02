@@ -344,3 +344,79 @@ nav a:hover{
     font-size:18px;
 
 }
+
+/* ===========================
+   PLANNER
+=========================== */
+
+.planner{
+
+    width:90%;
+
+    max-width:700px;
+
+    margin:50px auto;
+
+}
+
+.planner input{
+
+    width:70%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:20px;
+
+    font-size:18px;
+
+    outline:none;
+
+}
+
+.planner button{
+
+    padding:15px 20px;
+
+    border:none;
+
+    border-radius:20px;
+
+    background:#ff4f9a;
+
+    color:white;
+
+    cursor:pointer;
+
+    margin-left:10px;
+
+}
+
+.planner ul{
+
+    margin-top:30px;
+
+    list-style:none;
+
+}
+
+.planner li{
+
+    background:white;
+
+    margin-bottom:15px;
+
+    padding:18px;
+
+    border-radius:20px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+
+}
