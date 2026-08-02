@@ -1,59 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bloom Studio</title>
 
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-
-<header>
+<header class="topbar">
 
     <div class="logo">
         🌸 Bloom Studio
     </div>
 
-    <nav>
+    <div class="top-icons">
 
-        <a href="index.html">Home</a>
-        <a href="planner.html">Planner</a>
-        <a href="design.html">Design</a>
-        <a href="journal.html">Journal</a>
-        <a href="friends.html">Friends</a>
-        <a href="music.html">Music</a>
-        <a href="pets.html">Bloom Pet</a>
-        <a href="settings.html">Settings</a>
+        <button>🔔</button>
 
-    </nav>
+        <button>👤</button>
+
+        <button>⚙️</button>
+
+    </div>
 
 </header>
 
-<section class="hero">
+<div class="app-layout">
 
-    <h1 id="greeting">Good Morning 🌸</h1>
+    <aside class="sidebar">
 
-    <p>Create • Learn • Grow Together</p>
+        <a href="index.html">🏠 Home</a>
 
-    <div id="clock"></div>
+        <a href="planner.html">📅 Planner</a>
 
-    <div id="date"></div>
+        <a href="journal.html">📖 Journal</a>
 
-</section>
+        <a href="design.html">🎨 Design</a>
 
-<section class="welcome">
+        <a href="friends.html">👥 Friends</a>
 
-    <h2>🌸 Welcome Back</h2>
+        <a href="music.html">🎵 Music</a>
 
-    <p>
-        Let's make today beautiful and productive.
-    </p>
+        <a href="pets.html">🐾 Bloom Pet</a>
 
-</section>
+        <a href="settings.html">⚙️ Settings</a>
 
-<section class="dashboard">
+    </aside>
+
+    <main class="content">
+
+        <section class="hero">
+
+            <h1 id="greeting">Good Morning 🌸</h1>
+
+            <p>Create • Learn • Grow Together</p>
+
+            <div id="clock"></div>
+
+            <div id="date"></div>
+
+        </section>
+
+        <section class="welcome">
+
+            <h2>🌸 Welcome Back</h2>
+
+            <p>Let's make today beautiful and productive.</p>
+
+        </section>
+
+       <section class="dashboard">
 
     <div class="card" onclick="location.href='planner.html'">
         <div class="icon">📅</div>
@@ -93,17 +101,18 @@
 
 </section>
 
-<section class="quote">
+        <section class="quote">
 
-    <h2>🌸 Quote of the Day</h2>
+            <h2>🌸 Quote of the Day</h2>
 
-    <p id="quote">
-        Small progress every day becomes big results.
-    </p>
+            <p id="quote">
+                Small progress every day becomes big results.
+            </p>
 
-</section>
+        </section>
+
+    </main>
+
+</div>
 
 <script src="js/app.js"></script>
-
-</body>
-</html>

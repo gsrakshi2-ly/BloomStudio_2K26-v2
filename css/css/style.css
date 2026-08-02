@@ -527,3 +527,111 @@ footer{
     }
 
 }
+
+/* ======================================
+   APP LAYOUT
+====================================== */
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 30px;
+
+    background:rgba(255,255,255,.7);
+
+    backdrop-filter:blur(20px);
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+}
+
+.top-icons{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+.top-icons button{
+
+    border:none;
+
+    background:white;
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.app-layout{
+
+    display:flex;
+
+    min-height:calc(100vh - 90px);
+
+}
+
+.sidebar{
+
+    width:240px;
+
+    background:rgba(255,255,255,.65);
+
+    backdrop-filter:blur(20px);
+
+    padding:30px 20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.sidebar a{
+
+    text-decoration:none;
+
+    color:#555;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    transition:.3s;
+
+}
+
+.sidebar a:hover{
+
+    background:white;
+
+    color:#ff4f9a;
+
+}
+
+.content{
+
+    flex:1;
+
+    padding:20px;
+
+}
