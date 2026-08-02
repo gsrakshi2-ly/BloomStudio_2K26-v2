@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bloom Studio</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -18,20 +18,24 @@
 
     <nav>
 
-        <a href="#">Home</a>
-        <a href="#">Planner</a>
-        <a href="#">Design</a>
-        <a href="#">Friends</a>
-        <a href="#">Settings</a>
+        <a href="index.html">Home</a>
+        <a href="planner.html">Planner</a>
+        <a href="design.html">Design</a>
+        <a href="journal.html">Journal</a>
+        <a href="friends.html">Friends</a>
+        <a href="music.html">Music</a>
+        <a href="pets.html">Bloom Pet</a>
+        <a href="settings.html">Settings</a>
 
     </nav>
 
 </header>
 
 <section class="hero">
-<h1 id="greeting">Good Morning 🌸</h1>
 
-<p>Create • Learn • Grow Together</p>
+    <h1 id="greeting">Good Morning 🌸</h1>
+
+    <p>Create • Learn • Grow Together</p>
 
     <div id="clock"></div>
 
@@ -51,46 +55,42 @@
 
 <section class="dashboard">
 
-   <div class="card" onclick="location.href='planner.html'">
+    <div class="card" onclick="location.href='planner.html'">
+        <div class="icon">📅</div>
+        <h3>Planner</h3>
+        <p>Organize your day</p>
+    </div>
 
-    <div class="icon">📅</div>
+    <div class="card" onclick="location.href='design.html'">
+        <div class="icon">🎨</div>
+        <h3>Design Studio</h3>
+        <p>Create amazing projects</p>
+    </div>
 
-    <h3>Planner</h3>
+    <div class="card" onclick="location.href='journal.html'">
+        <div class="icon">📖</div>
+        <h3>Journal</h3>
+        <p>Your private space</p>
+    </div>
 
-    <p>Organize your day</p>
+    <div class="card" onclick="location.href='music.html'">
+        <div class="icon">🎵</div>
+        <h3>Music</h3>
+        <p>Focus & Relax</p>
+    </div>
 
-  </div>
+    <div class="card" onclick="location.href='pets.html'">
+        <div class="icon">🐾</div>
+        <h3>Bloom Pet</h3>
+        <p>Your companion</p>
+    </div>
 
-    <div class="card">
-    <div class="icon">🎨</div>
-    <h3>Design Studio</h3>
-    <p>Create amazing projects</p>
-</div>
+    <div class="card" onclick="location.href='friends.html'">
+        <div class="icon">👥</div>
+        <h3>Friends</h3>
+        <p>Connect together</p>
+    </div>
 
-<div class="card">
-    <div class="icon">📖</div>
-    <h3>Journal</h3>
-    <p>Your private space</p>
-</div>
-
-<div class="card">
-    <div class="icon">🎵</div>
-    <h3>Music</h3>
-    <p>Focus & relax</p>
-</div>
-
-<div class="card">
-    <div class="icon">🐾</div>
-    <h3>Bloom Pet</h3>
-    <p>Your companion</p>
-</div>
-
-<div class="card">
-    <div class="icon">👥</div>
-    <h3>Friends</h3>
-    <p>Connect together</p>
-</div>
-   
 </section>
 
 <section class="quote">
@@ -103,7 +103,7 @@
 
 </section>
 
-<script src="app.js"></script>
+<script src="js/app.js"></script>
 
 </body>
 </html>
