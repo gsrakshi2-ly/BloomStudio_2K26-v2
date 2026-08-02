@@ -2,27 +2,47 @@ function updateClock() {
 
     const now = new Date();
 
-    // Time
-    const time = now.toLocaleTimeString([], {
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit"
-    });
+    // Clock
+    document.getElementById("clock").innerHTML =
+        now.toLocaleTimeString();
 
     // Date
-    const date = now.toLocaleDateString([], {
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric"
-    });
+    document.getElementById("date").innerHTML =
+        now.toDateString();
 
-    document.getElementById("clock").textContent = "🕒 " + time;
+    // Greeting
+    let hour = now.getHours();
 
-    document.getElementById("date").textContent = "📅 " + date;
+    let greeting = "";
+
+    if(hour < 12){
+
+        greeting = "🌸 Good Morning";
+
+    }
+
+    else if(hour < 17){
+
+        greeting = "☀️ Good Afternoon";
+
+    }
+
+    else if(hour < 20){
+
+        greeting = "🌅 Good Evening";
+
+    }
+
+    else{
+
+        greeting = "🌙 Good Night";
+
+    }
+
+    document.getElementById("greeting").innerHTML = greeting;
 
 }
 
-updateClock();
+setInterval(updateClock,1000);
 
-setInterval(updateClock, 1000);
+updateClock();
