@@ -1,65 +1,94 @@
-/* =========================
-   BLOOM STUDIO APP.JS
-========================= */
+
+"use strict";
+
+const Bloom = {
+
+    version: "5.0",
+
+    taskKey: "BloomTasks",
+
+    journalKey: "BloomJournal",
+
+    themeKey: "BloomTheme",
+
+    boardKey: "BloomBoard",
+
+    canvasKey: "BloomCanvas"
+
+};
 
 
+const $ = selector => document.querySelector(selector);
 
-// =========================
-// LIVE CLOCK + GREETING
-// =========================
+const $$ = selector => document.querySelectorAll(selector);
 
+function showToast(message){
 
-function updateTime(){
+    const toast = document.createElement("div");
 
-    const now = new Date();
+    toast.className = "toast";
 
-    let hour = now.getHours();
+    toast.textContent = message;
 
-    let greeting;
+    document.body.appendChild(toast);
 
+    setTimeout(()=>{
+
+        toast.classList.add("show");
+
+    },20);
+
+    setTimeout(()=>{
+
+        toast.classList.remove("show");
+
+        setTimeout(()=>{
+
+            toast.remove();
+
+        },400);
+
+    },2500);
+
+}
+
+function updateGreeting(){
+
+    const hour = new Date().getHours();
+
+    let text;
 
     if(hour < 12){
 
-        greeting = "Good Morning 🌸";
+        text = "Good Morning 🌸";
 
     }
+
     else if(hour < 18){
 
-        greeting = "Good Afternoon 🌿";
+        text = "Good Afternoon 🌿";
 
     }
+
     else{
 
-        greeting = "Good Evening ✨";
+        text = "Good Evening ✨";
 
     }
 
+    const greeting = $("#greeting");
 
-    const welcome = document.querySelector(
-        ".welcome-card h2"
-    );
+    if(greeting){
 
-
-    if(welcome){
-
-        welcome.innerHTML = greeting + ", Creator 💗";
+        greeting.innerHTML = text + ", Creator 💗";
 
     }
 
 }
 
-/* =========================
-   DASHBOARD DATE SYSTEM
-========================= */
+function updateDate(){
 
-
-function updateDashboardDate(){
-
-
-    const date =
-    new Date();
-
-
+    const today = new Date();
 
     const options = {
 
@@ -73,992 +102,1066 @@ function updateDashboardDate(){
 
     };
 
+    const box = $("#today-date");
 
+    if(box){
 
-    const formattedDate =
-    date.toLocaleDateString(
-        "en-US",
-        options
-    );
-
-
-
-    const dateBox =
-    document.getElementById(
-        "today-date"
-    );
-
-
-
-    if(dateBox){
-
-        dateBox.innerHTML =
-        "📅 " + formattedDate;
+        box.innerHTML =
+        "📅 " +
+        today.toLocaleDateString(
+            "en-US",
+            options
+        );
 
     }
 
-
 }
 
+function setupNavigation(){
 
+    const buttons = $$(".nav-item");
 
-updateDashboardDate();
+    buttons.forEach(button=>{
 
+        button.addEventListener("click",()=>{
 
+            buttons.forEach(item=>{
 
+                item.classList.remove("active");
 
+            });
 
+            button.classList.add("active");
 
+            const target =
+            button.textContent
+            .trim()
+            .toLowerCase()
+            .replace(/\s+/g,"-");
 
+            const section =
+            document.getElementById(target);
 
-/* =========================
-   APP NAVIGATION SYSTEM
-========================= */
+            if(section){
 
+                section.scrollIntoView({
 
-const sections =
-document.querySelectorAll(
-"main section"
-);
+                    behavior:"smooth"
 
+                });
 
+            }
 
-const menuButtons =
-document.querySelectorAll(
-".nav-item"
-);
-
-
-
-menuButtons.forEach(
-(button,index)=>{
-
-
-button.addEventListener(
-"click",
-()=>{
-
-
-    menuButtons.forEach(
-    item=>{
-
-        item.classList.remove(
-            "active"
-        );
+        });
 
     });
 
+}
 
+function setupHeroButton(){
 
-    button.classList.add(
-        "active"
-    );
+    const button =
+    $(".hero .primary-btn");
 
+    if(!button) return;
 
+    button.addEventListener("click",()=>{
 
-    if(sections[index]){
-
-
-        sections[index]
-        .scrollIntoView({
+        $("#planner").scrollIntoView({
 
             behavior:"smooth"
 
         });
 
+    });
+
+}
+
+function loadTheme(){
+
+    const theme =
+    localStorage.getItem(
+        Bloom.themeKey
+    );
+
+    if(theme==="dark"){
+
+        document.body.classList.add(
+            "dark"
+        );
 
     }
 
+}
 
+function setTheme(mode){
 
-});
+    if(mode==="dark"){
 
+        document.body.classList.add(
+            "dark"
+        );
 
-});
+    }
 
+    else{
 
-setInterval(updateTime,1000);
+        document.body.classList.remove(
+            "dark"
+        );
 
-updateTime();
-
-
-
-
-
-
-
-
-// =========================
-// SIDEBAR NAVIGATION
-// =========================
-
-
-const navButtons =
-document.querySelectorAll(".nav-item");
-
-
-
-navButtons.forEach(button=>{
-
-
-    button.addEventListener(
-        "click",
-        ()=>{
-
-
-            navButtons.forEach(btn=>{
-
-                btn.classList.remove("active");
-
-            });
-
-
-            button.classList.add("active");
-
-
-            let name =
-            button.innerText;
-
-
-            console.log(
-                "Opened:",
-                name
-            );
-
-
-        }
-
-    );
-
-
-});
-
-
-
-
-
-
-
-
-// =========================
-// JOURNAL SAVE
-// =========================
-
-
-const saveButton =
-document.querySelector(
-".journal-container .primary-btn"
-);
-
-
-
-const journal =
-document.querySelector(
-".journal-container textarea"
-);
-
-
-
-if(saveButton){
-
-
-saveButton.addEventListener(
-"click",
-()=>{
-
+    }
 
     localStorage.setItem(
-        "BloomJournal",
-        journal.value
+        Bloom.themeKey,
+        mode
     );
-
-
-    alert(
-        "Journal saved 🌸"
-    );
-
-
-});
-
-
 
 }
 
+function setupThemeButtons(){
 
+    const buttons =
+    $$(".setting-item button");
 
-window.addEventListener(
-"load",
+    buttons.forEach(button=>{
+
+        button.addEventListener("click",()=>{
+
+            if(button.textContent.includes("Dark")){
+
+                setTheme("dark");
+
+                showToast(
+                    "🌙 Dark Mode Enabled"
+                );
+
+            }
+
+            else if(button.textContent.includes("Light")){
+
+                setTheme("light");
+
+                showToast(
+                    "☀️ Light Mode Enabled"
+                );
+
+            }
+
+        });
+
+    });
+
+}
+
+function setupMusic(){
+
+    const buttons =
+    $$(".music-btn");
+
+    buttons.forEach(button=>{
+
+        button.addEventListener("click",()=>{
+
+            if(button.textContent.includes("Play")){
+
+                button.textContent =
+                "⏸ Pause";
+
+            }
+
+            else{
+
+                button.textContent =
+                "▶ Play";
+
+            }
+
+        });
+
+    });
+
+}
+
+document.addEventListener(
+"DOMContentLoaded",
 ()=>{
 
+    updateGreeting();
 
-    if(journal){
+    updateDate();
 
+    setupNavigation();
 
-        journal.value =
-        localStorage.getItem(
-        "BloomJournal"
-        ) || "";
+    setupHeroButton();
 
+    loadTheme();
 
-    }
+    setupThemeButtons();
 
+    setupMusic();
 
-});
+    setInterval(updateGreeting,60000);
 
-
-
-
-
-
-
-
-// =========================
-// MUSIC BUTTONS
-// =========================
-
-
-const musicButtons =
-document.querySelectorAll(
-".music-btn"
-);
-
-
-
-musicButtons.forEach(button=>{
-
-
-button.addEventListener(
-"click",
-()=>{
-
-
-    if(button.innerHTML.includes("▶")){
-
-
-        button.innerHTML =
-        "⏸ Pause";
-
-
-    }
-
-    else{
-
-
-        button.innerHTML =
-        "▶ Play";
-
-
-    }
-
-
-});
-
-
-});
-
-
-
-
-
-
-
-
-// =========================
-// BLOOM PET
-// =========================
-
-
-let petLevel = 1;
-
-let happiness = 3;
-
-
-
-const petButtons =
-document.querySelectorAll(
-".pet-info .primary-btn"
-);
-
-
-
-petButtons.forEach(button=>{
-
-
-button.addEventListener(
-"click",
-()=>{
-
-
-    happiness++;
-
-
-    if(happiness >=5){
-
-        petLevel++;
-
-        happiness=0;
-
-    }
-
-
-
-    alert(
-    "Your Bloom Pet is happy! 🐾🌸"
+    console.log(
+        "🌸 Bloom Studio v5.0 Loaded"
     );
 
-
-
 });
 
-
-
-});
-
-
-
-
-
-
-
-
-// =========================
-// THEME SWITCH
-// =========================
-
-
-const themeButtons =
-document.querySelectorAll(
-".setting-item button"
-);
-
-
-
-themeButtons.forEach(button=>{
-
-
-button.addEventListener(
-"click",
-()=>{
-
-
-    if(
-    button.innerText.includes(
-    "Dark"
-    )
-    ){
-
-
-        document.body.style.background =
-        "#222";
-
-
-        document.body.style.color =
-        "white";
-
-
-    }
-
-
-
-    else{
-
-
-        document.body.style.background =
-        "linear-gradient(135deg,#fff0f6,#f0fff4)";
-
-
-        document.body.style.color =
-        "#444";
-
-
-    }
-
-
-
-});
-
-
-});
-
-
-
-
-
-
-
-
-// =========================
-// ASSISTANT BUTTONS
-// =========================
-
-
-const assistantButtons =
-document.querySelectorAll(
-".assistant-options button"
-);
-
-
-
-assistantButtons.forEach(button=>{
-
-
-button.addEventListener(
-"click",
-()=>{
-
-
-alert(
-
-"Bloom Assistant 🌸\n\n" +
-
-"I will help you with " +
-
-button.innerText
-
-);
-
-
-});
-
-
-});
-
-
-
-
-
-
-
-
-// =========================
-// START BUTTON
-// =========================
-
-
-const startButton =
-document.querySelector(
-".hero .primary-btn"
-);
-
-
-
-if(startButton){
-
-
-startButton.addEventListener(
-"click",
-()=>{
-
-
-document.querySelector(
-"#planner"
-)
-.scrollIntoView(
-{
-behavior:"smooth"
-}
-);
-
-
-});
-
-
-}
-
-
-
-
-
-
-
-
-// =========================
-// WELCOME MESSAGE
-// =========================
-
-
-window.onload=function(){
-
-
-console.log(
-"🌸 Welcome to Bloom Studio!"
-);
-
-
-};
-
-/* =========================
-   SMART PLANNER SYSTEM
-========================= */
-
-
-let tasks =
-JSON.parse(
-localStorage.getItem("BloomTasks")
-)
-||
-[];
-
-
-
-
-const taskInput =
-document.getElementById(
-"task-input"
-);
-
-
-
-const addTask =
-document.getElementById(
-"add-task"
-);
-
-
-
-const taskList =
-document.getElementById(
-"task-list"
-);
-
-
-
-const progressFill =
-document.getElementById(
-"progress-fill"
-);
-
-
-
-const progressText =
-document.getElementById(
-"progress-text"
-);
-
-
-
-
+let tasks = JSON.parse(
+    localStorage.getItem(Bloom.taskKey)
+) || [];
+
+const taskInput = $("#task-input");
+const addTaskBtn = $("#add-task");
+const taskList = $("#task-list");
+const progressFill = $("#progress-fill");
+const progressText = $("#progress-text");
 
 function saveTasks(){
 
-localStorage.setItem(
-"BloomTasks",
-JSON.stringify(tasks)
-);
+    localStorage.setItem(
+        Bloom.taskKey,
+        JSON.stringify(tasks)
+    );
 
 }
 
 
+function updatePlannerProgress(){
 
+    if(!progressFill || !progressText) return;
 
+    const completed =
+    tasks.filter(task=>task.done).length;
 
+    const percent =
+    tasks.length===0
+    ?0
+    :Math.round(
+        completed/tasks.length*100
+    );
 
-function updateProgress(){
+    progressFill.style.width =
+    percent+"%";
 
-
-let completed =
-tasks.filter(
-task=>task.done
-).length;
-
-
-
-let percent =
-tasks.length
-?
-Math.round(
-(completed/tasks.length)*100
-)
-:
-0;
-
-
-
-progressFill.style.width =
-percent+"%";
-
-
-
-progressText.innerHTML =
-percent+
-"% Completed 🌸";
-
+    progressText.textContent =
+    percent+"% Completed 🌸";
 
 }
 
+function renderTasks(){
 
+    if(!taskList) return;
 
+    taskList.innerHTML="";
 
+    tasks.forEach((task,index)=>{
 
+        const li =
+        document.createElement("li");
 
+        li.className="task-item";
 
-function displayTasks(){
+        if(task.done){
 
+            li.classList.add("completed");
 
-taskList.innerHTML="";
+        }
 
+        li.innerHTML=`
 
+        <span>${task.text}</span>
 
-tasks.forEach(
-(task,index)=>{
+        <div class="task-buttons">
 
+            <button class="complete-btn">
+            ✓
+            </button>
 
-let li =
-document.createElement(
-"li"
-);
+            <button class="delete-btn">
+            🗑
+            </button>
 
+        </div>
 
+        `;
 
-li.className =
-"task-item";
+        li.querySelector(".complete-btn")
+        .addEventListener("click",()=>{
 
+            tasks[index].done=
+            !tasks[index].done;
 
+            saveTasks();
 
-if(task.done){
+            renderTasks();
 
-li.classList.add(
-"completed"
-);
+        });
+
+        li.querySelector(".delete-btn")
+        .addEventListener("click",()=>{
+
+            tasks.splice(index,1);
+
+            saveTasks();
+
+            renderTasks();
+
+            showToast(
+                "🗑 Task Deleted"
+            );
+
+        });
+
+        taskList.appendChild(li);
+
+    });
+
+    updatePlannerProgress();
 
 }
 
+function addTask(){
 
+    if(!taskInput) return;
 
-li.innerHTML = `
+    const text=
+    taskInput.value.trim();
 
-<span>
-${task.text}
-</span>
+    if(text===""){
 
+        showToast(
+        "Please enter a task."
+        );
 
-<div class="task-buttons">
+        return;
 
-<button onclick="completeTask(${index})">
-✓
-</button>
+    }
 
+    tasks.push({
 
-<button onclick="deleteTask(${index})">
-🗑
-</button>
+        text:text,
 
+        done:false,
 
-</div>
+        created:new Date().toISOString()
 
-`;
+    });
 
+    taskInput.value="";
 
+    saveTasks();
 
-taskList.appendChild(li);
+    renderTasks();
 
+    showToast(
+        "🌸 Task Added!"
+    );
 
+}
+
+if(taskInput){
+
+taskInput.addEventListener(
+"keypress",
+e=>{
+
+if(e.key==="Enter"){
+
+addTask();
+
+}
 
 });
 
+}
 
+if(addTaskBtn){
 
-updateProgress();
+addTaskBtn.addEventListener(
+"click",
+addTask
+);
 
 }
 
 
+renderTasks();
+
+const journalBox =
+$(".journal-container textarea");
+
+const journalSave =
+$(".journal-container .primary-btn");
 
 
+function loadJournal(){
 
+if(!journalBox) return;
 
+journalBox.value=
 
-addTask.addEventListener(
-"click",
+localStorage.getItem(
+Bloom.journalKey
+)||"";
+
+}
+
+function saveJournal(){
+
+if(!journalBox) return;
+
+localStorage.setItem(
+
+Bloom.journalKey,
+
+journalBox.value
+
+);
+
+showToast(
+
+"📖 Journal Saved"
+
+);
+
+}
+
+if(journalBox){
+
+journalBox.addEventListener(
+
+"input",
+
 ()=>{
 
+localStorage.setItem(
 
-let text =
-taskInput.value.trim();
+Bloom.journalKey,
 
+journalBox.value
 
-
-if(text){
-
-
-tasks.push({
-
-text:text,
-
-done:false
-
-});
-
-
-
-taskInput.value="";
-
-
-saveTasks();
-
-
-displayTasks();
-
-
-}
-
-
-});
-
-
-
-
-
-
-
-function completeTask(index){
-
-
-tasks[index].done =
-!tasks[index].done;
-
-
-
-saveTasks();
-
-
-displayTasks();
-
-
-}
-
-
-
-
-
-
-
-function deleteTask(index){
-
-
-tasks.splice(
-index,
-1
 );
 
+}
 
-saveTasks();
-
-
-displayTasks();
-
+);
 
 }
 
+if(journalSave){
 
+journalSave.addEventListener(
 
+"click",
 
-displayTasks();
+saveJournal
 
-/* =========================
-   DRAWING CANVAS
-========================= */
-
-
-const canvas =
-document.getElementById(
-"drawing-canvas"
 );
 
+}
 
+loadJournal();
+
+const canvas = $("#drawing-canvas");
 
 if(canvas){
 
+    const ctx = canvas.getContext("2d");
 
-const ctx =
-canvas.getContext("2d");
+    let drawing = false;
+    let erasing = false;
+    let brushSize = 5;
 
+    function saveCanvas(){
 
+        localStorage.setItem(
+            Bloom.canvasKey,
+            canvas.toDataURL()
+        );
 
-let drawing = false;
+    }
 
-let erasing = false;
+    function loadCanvas(){
 
-let size = 5;
+        const data =
+        localStorage.getItem(
+            Bloom.canvasKey
+        );
 
+        if(!data) return;
 
+        const image = new Image();
 
+        image.onload = () => {
 
+            ctx.drawImage(
+                image,
+                0,
+                0
+            );
 
-canvas.addEventListener(
-"mousedown",
-(e)=>{
+        };
 
-drawing=true;
+        image.src = data;
 
-ctx.beginPath();
+    }
 
-ctx.moveTo(
-e.offsetX,
-e.offsetY
-);
+    loadCanvas();
 
-});
+    canvas.addEventListener("mousedown",(e)=>{
 
+        drawing = true;
 
+        ctx.beginPath();
 
+        ctx.moveTo(
+            e.offsetX,
+            e.offsetY
+        );
 
+    });
 
-canvas.addEventListener(
-"mousemove",
-(e)=>{
+    canvas.addEventListener("mousemove",(e)=>{
 
+        if(!drawing) return;
 
-if(!drawing)
-return;
+        ctx.lineWidth = brushSize;
+        ctx.lineCap = "round";
 
+        ctx.strokeStyle =
+        erasing
+        ? "#ffffff"
+        : "#d85b91";
 
+        ctx.lineTo(
+            e.offsetX,
+            e.offsetY
+        );
 
-ctx.lineWidth=size;
+        ctx.stroke();
 
-ctx.lineCap="round";
+    });
 
+    canvas.addEventListener("mouseup",()=>{
 
+        drawing = false;
 
-if(erasing){
+        saveCanvas();
 
-ctx.strokeStyle="white";
+    });
+
+    canvas.addEventListener("mouseleave",()=>{
+
+        drawing = false;
+
+    });
+
+    $("#brush-size")?.addEventListener(
+        "input",
+        e=>{
+
+            brushSize =
+            Number(e.target.value);
+
+        }
+    );
+
+    $("#pencil-tool")?.addEventListener(
+        "click",
+        ()=>{
+
+            erasing = false;
+
+            showToast(
+                "✏ Pencil Selected"
+            );
+
+        }
+    );
+
+    $("#eraser-tool")?.addEventListener(
+        "click",
+        ()=>{
+
+            erasing = true;
+
+            showToast(
+                "🧽 Eraser Selected"
+            );
+
+        }
+    );
+
+    $("#clear-canvas")?.addEventListener(
+        "click",
+        ()=>{
+
+            ctx.clearRect(
+                0,
+                0,
+                canvas.width,
+                canvas.height
+            );
+
+            localStorage.removeItem(
+                Bloom.canvasKey
+            );
+
+            showToast(
+                "🗑 Canvas Cleared"
+            );
+
+        }
+    );
+
+    $("#save-canvas")?.addEventListener(
+        "click",
+        ()=>{
+
+            const link =
+            document.createElement("a");
+
+            link.download =
+            "Bloom-Studio-Art.png";
+
+            link.href =
+            canvas.toDataURL();
+
+            link.click();
+
+            showToast(
+                "💾 Drawing Saved"
+            );
+
+        }
+    );
 
 }
 
-else{
+const boardGrid = $("#board-grid");
 
-ctx.strokeStyle="#d85b91";
+function saveBoard(){
+
+    if(!boardGrid) return;
+
+    localStorage.setItem(
+
+        Bloom.boardKey,
+
+        boardGrid.innerHTML
+
+    );
 
 }
 
+function loadBoard(){
 
+    if(!boardGrid) return;
 
-ctx.lineTo(
-e.offsetX,
-e.offsetY
-);
+    boardGrid.innerHTML =
 
+    localStorage.getItem(
 
+        Bloom.boardKey
 
-ctx.stroke();
-
-
-});
-
-
-
-
-
-
-canvas.addEventListener(
-"mouseup",
-()=>{
-
-drawing=false;
-
-});
-
-
-
-
-
-
-
-document
-.getElementById("brush-size")
-.addEventListener(
-"input",
-(e)=>{
-
-size=e.target.value;
-
-});
-
-
-
-
-
-
-document
-.getElementById("eraser-tool")
-.addEventListener(
-"click",
-()=>{
-
-erasing=true;
-
-});
-
-
-
-
-
-
-document
-.getElementById("pencil-tool")
-.addEventListener(
-"click",
-()=>{
-
-erasing=false;
-
-});
-
-
-
-
-
-
-
-document
-.getElementById("clear-canvas")
-.addEventListener(
-"click",
-()=>{
-
-
-ctx.clearRect(
-0,
-0,
-canvas.width,
-canvas.height
-);
-
-
-});
-
-
-
-
-
-
-
-document
-.getElementById("save-canvas")
-.addEventListener(
-"click",
-()=>{
-
-
-let link =
-document.createElement(
-"a"
-);
-
-
-link.download =
-"Bloom-Design.png";
-
-
-link.href =
-canvas.toDataURL();
-
-
-link.click();
-
-
-});
-
+    ) || "";
 
 }
+
+loadBoard();
+
+function createDeleteButton(card){
+
+    const btn =
+    document.createElement("button");
+
+    btn.className =
+    "delete-board-item";
+
+    btn.textContent =
+    "🗑 Remove";
+
+    btn.onclick = ()=>{
+
+        card.remove();
+
+        saveBoard();
+
+    };
+
+    card.appendChild(btn);
+
+}
+
+$("#image-upload")?.addEventListener(
+"change",
+e=>{
+
+    const file =
+    e.target.files[0];
+
+    if(!file) return;
+
+    const reader =
+    new FileReader();
+
+    reader.onload = ()=>{
+
+        const card =
+        document.createElement("div");
+
+        card.className =
+        "board-item";
+
+        card.innerHTML =
+
+        `<img src="${reader.result}">`;
+
+        createDeleteButton(card);
+
+        boardGrid.appendChild(card);
+
+        saveBoard();
+
+        showToast(
+            "🖼 Image Added"
+        );
+
+    };
+
+    reader.readAsDataURL(file);
+
+});
+
+$("#add-note")?.addEventListener(
+"click",
+()=>{
+
+    const input =
+    $("#note-input");
+
+    if(!input.value.trim()) return;
+
+    const card =
+    document.createElement("div");
+
+    card.className =
+    "board-item";
+
+    card.innerHTML =
+
+    `<p>${input.value}</p>`;
+
+    createDeleteButton(card);
+
+    boardGrid.appendChild(card);
+
+    input.value="";
+
+    saveBoard();
+
+    showToast(
+        "📝 Note Added"
+    );
+
+});
+
+$("#add-color")?.addEventListener(
+"click",
+()=>{
+
+    const color =
+    $("#color-picker").value;
+
+    const card =
+    document.createElement("div");
+
+    card.className =
+    "board-item";
+
+    card.innerHTML =
+
+    `<div class="color-preview"
+    style="background:${color};"></div>
+
+    <p>${color}</p>`;
+
+    createDeleteButton(card);
+
+    boardGrid.appendChild(card);
+
+    saveBoard();
+
+    showToast(
+        "🎨 Colour Added"
+    );
+
+});
+
+const academy =
+$$(".academy-level");
+
+academy.forEach(level=>{
+
+    level.addEventListener(
+    "click",
+    ()=>{
+
+        academy.forEach(item=>{
+
+            item.classList.remove(
+                "active"
+            );
+
+        });
+
+        level.classList.add(
+            "active"
+        );
+
+        const title =
+        level.querySelector("h3")
+        .textContent;
+
+        showToast(
+
+            "📚 " +
+            title +
+            " Selected"
+
+        );
+
+    });
+
+});
+
+function setupMusicPlayer(){
+
+    const buttons = document.querySelectorAll(".music-btn");
+
+    buttons.forEach(button=>{
+
+        button.addEventListener("click",()=>{
+
+            if(button.dataset.playing==="true"){
+
+                button.dataset.playing="false";
+                button.textContent="▶ Play";
+
+                showToast("⏸ Music Paused");
+
+            }
+
+            else{
+
+                buttons.forEach(btn=>{
+
+                    btn.dataset.playing="false";
+                    btn.textContent="▶ Play";
+
+                });
+
+                button.dataset.playing="true";
+                button.textContent="⏸ Pause";
+
+                showToast("🎵 Music Started");
+
+            }
+
+        });
+
+    });
+
+}
+
+let pet = JSON.parse(localStorage.getItem("BloomPet")) || {
+    level:1,
+    happiness:3,
+    energy:4
+};
+
+const petButtons=document.querySelectorAll(".pet-info .primary-btn");
+const petInfo=document.querySelector(".pet-info");
+
+function savePet(){
+
+    localStorage.setItem("BloomPet",JSON.stringify(pet));
+
+}
+
+function renderPet(){
+
+    if(!petInfo) return;
+
+    petInfo.innerHTML=`
+        <h3>Luna the Bloom Cat</h3>
+
+        <p>Level: ${pet.level} 🌱</p>
+
+        <p>Happiness:
+        ${"⭐".repeat(pet.happiness)}
+        ${"☆".repeat(5-pet.happiness)}
+        </p>
+
+        <p>Energy:
+        ${"⭐".repeat(pet.energy)}
+        ${"☆".repeat(5-pet.energy)}
+        </p>
+
+        <button class="primary-btn" id="feed-pet">
+        Feed 🍎
+        </button>
+
+        <button class="primary-btn" id="play-pet">
+        Play 🎾
+        </button>
+    `;
+
+    document.getElementById("feed-pet").onclick=()=>{
+
+        pet.happiness=Math.min(5,pet.happiness+1);
+
+        if(pet.happiness===5){
+
+            pet.level++;
+
+        }
+
+        savePet();
+
+        renderPet();
+
+        showToast("🍎 Luna enjoyed the food!");
+
+    };
+
+    document.getElementById("play-pet").onclick=()=>{
+
+        pet.energy=Math.min(5,pet.energy+1);
+
+        savePet();
+
+        renderPet();
+
+        showToast("🎾 Luna loved playing!");
+
+    };
+
+}
+
+renderPet();
+
+const assistantMessages={
+    "📚 Study Help":"Let's create a study plan together!",
+    "🎨 Design Mentor":"Practice one sketch every day.",
+    "💡 Ideas":"Try designing your dream bedroom today.",
+    "🌱 Motivation":"Every masterpiece starts with one line."
+};
+
+document.querySelectorAll(".assistant-options button").forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        const reply=document.createElement("p");
+
+        reply.className="assistant-reply";
+
+        reply.textContent=
+        assistantMessages[button.textContent] ||
+        "I'm here to help you!";
+
+        const content=document.querySelector(".assistant-content");
+
+        const old=document.querySelector(".assistant-reply");
+
+        if(old){
+
+            old.remove();
+
+        }
+
+        content.appendChild(reply);
+
+    });
+
+});
+
+function updateJourney(){
+
+    const cards=document.querySelectorAll(".journey-card p");
+
+    if(cards.length<4) return;
+
+    cards[0].textContent=
+    tasks.length+" Tasks";
+
+    cards[1].textContent=
+    document.querySelector(".academy-level.active h3").textContent;
+
+    cards[2].textContent=
+    document.querySelectorAll(".board-item").length+" Designs";
+
+    cards[3].textContent=
+    "Level "+pet.level;
+
+}
+
+setInterval(updateJourney,2000);
+
+document.querySelectorAll(".setting-item input").forEach(input=>{
+
+    const key="setting-"+input.parentElement.textContent.trim();
+
+    input.checked=
+    localStorage.getItem(key)==="true";
+
+    input.addEventListener("change",()=>{
+
+        localStorage.setItem(
+            key,
+            input.checked
+        );
+
+        showToast("⚙ Settings Updated");
+
+    });
+
+});
+
+function welcomePopup(){
+
+    const today=
+    new Date().toDateString();
+
+    const saved=
+    localStorage.getItem("BloomWelcome");
+
+    if(saved!==today){
+
+        showToast("🌸 Welcome back to Bloom Studio!");
+
+        localStorage.setItem(
+            "BloomWelcome",
+            today
+        );
+
+    }
+
+}
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+    setupMusicPlayer();
+
+    renderPet();
+
+    updateJourney();
+
+    welcomePopup();
+
+    console.log("🌸 Bloom Studio v5.0 Ready!");
+
+});

@@ -5,23 +5,23 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+    <title>Bloom Studio 🌸</title>
 
-    <title>🌸 Bloom Studio</title>
+    <meta
+        name="description"
+        content="Bloom Studio - Your Creative Learning Companion">
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css">
 
 </head>
 
-
 <body>
-
-
-<!-- =========================
-     TOP NAVIGATION
-========================= -->
 
 <header class="topbar">
 
@@ -29,18 +29,17 @@
         🌸 Bloom Studio
     </div>
 
-
     <div class="top-actions">
 
-        <button>
+        <button aria-label="Notifications">
             🔔
         </button>
 
-        <button>
+        <button aria-label="Music">
             🎵
         </button>
 
-        <button>
+        <button aria-label="Profile">
             👤
         </button>
 
@@ -48,390 +47,239 @@
 
 </header>
 
-
-
-
-
-<!-- =========================
-     SIDEBAR
-========================= -->
-
-
 <aside class="sidebar">
-
 
     <nav>
 
-
-        <button class="nav-item active">
+        <a href="#home" class="nav-item active">
             🏠 Home
-        </button>
+        </a>
 
-
-        <button class="nav-item">
+        <a href="#planner" class="nav-item">
             📅 Planner
-        </button>
+        </a>
 
-
-        <button class="nav-item">
+        <a href="#journal" class="nav-item">
             📖 Journal
-        </button>
+        </a>
 
-
-        <button class="nav-item">
+        <a href="#design-studio" class="nav-item">
             🎨 Design Studio
-        </button>
+        </a>
 
+        <a href="#design-academy" class="nav-item">
+            🎓 Academy
+        </a>
 
-        <button class="nav-item">
+        <a href="#music" class="nav-item">
             🎵 Music
-        </button>
+        </a>
 
-
-        <button class="nav-item">
+        <a href="#bloom-pet" class="nav-item">
             🐾 Bloom Pet
-        </button>
+        </a>
 
+        <a href="#community" class="nav-item">
+            👥 Community
+        </a>
 
-        <button class="nav-item">
-            👥 Friends
-        </button>
-
-
-        <button class="nav-item">
-            🌱 Clubs
-        </button>
-
-
-        <button class="nav-item">
+        <a href="#assistant" class="nav-item">
             🤖 Assistant
-        </button>
+        </a>
 
-
-        <button class="nav-item">
+        <a href="#settings" class="nav-item">
             ⚙️ Settings
-        </button>
-
+        </a>
 
     </nav>
 
-
 </aside>
-
-
-
-
-
-
-
-<!-- =========================
-     MAIN CONTENT
-========================= -->
-
 
 <main class="main-content">
 
-
-
-
-
-<!-- =========================
-     HOME HERO
-========================= -->
-
-
 <section id="home" class="hero">
 
-
     <div class="hero-text">
-
 
         <h1>
             Welcome to Bloom Studio 🌸
         </h1>
 
-
         <p>
-            Grow your creativity, productivity and dreams
-            one step at a time.
+            Your creative space to learn, design,
+            stay productive, and grow every day.
         </p>
-
 
         <button class="primary-btn">
             Start Blooming ✨
         </button>
 
-
     </div>
-
-
 
     <div class="hero-image">
-
         🌸
-
     </div>
 
-
-
 </section>
-
-
-
-
-
-
-
-
-<!-- =========================
-     WELCOME CARD
-========================= -->
-
 
 <section class="welcome-card">
 
+    <h2 id="greeting">
+        Welcome Creator 💗
+    </h2>
 
-  <h2 id="greeting">
-    Welcome Creator 💗
-</h2>
-
-<p id="today-date">
-    
-</p>
-
+    <p id="today-date"></p>
 
     <p>
-        Ready to learn, design and create something beautiful today?
+        Ready to create something amazing today?
     </p>
-
 
     <div class="stats">
 
-
         <div class="stat-card">
 
-            <h3>
-                🔥 0
-            </h3>
+            <h3>🔥 0</h3>
 
-            <p>
-                Day Streak
-            </p>
+            <p>Day Streak</p>
 
         </div>
 
-
-
         <div class="stat-card">
 
-            <h3>
-                🎨 0
-            </h3>
+            <h3>🎨 0</h3>
 
-            <p>
-                Designs Created
-            </p>
+            <p>Designs</p>
 
         </div>
 
-
-
         <div class="stat-card">
 
-            <h3>
-                📚 0
-            </h3>
+            <h3>📚 0</h3>
 
-            <p>
-                Tasks Completed
-            </p>
+            <p>Tasks</p>
 
         </div>
 
+        <div class="stat-card">
+
+            <h3>🏆 Beginner</h3>
+
+            <p>Academy Level</p>
+
+        </div>
 
     </div>
-
 
 </section>
 
-
-
-
-
-
-
-
-<!-- =========================
-     DASHBOARD CARDS
-========================= -->
-
-
-<section class="dashboard">
-
+<section id="dashboard" class="dashboard">
 
     <div class="dashboard-card">
 
-        <span>
-            📅
-        </span>
+        <span>📅</span>
 
-        <h3>
-            Today's Planner
-        </h3>
+        <h3>Planner</h3>
 
-        <p>
-            Organize your goals and tasks.
-        </p>
+        <p>Manage today's goals.</p>
 
     </div>
-
-
-
-
 
     <div class="dashboard-card">
 
-        <span>
-            ✏️
-        </span>
+        <span>🎨</span>
 
-        <h3>
-            Creative Space
-        </h3>
+        <h3>Design Studio</h3>
 
-        <p>
-            Explore drawing and design ideas.
-        </p>
+        <p>Create sketches and ideas.</p>
 
     </div>
-
-
-
-
-
 
     <div class="dashboard-card">
 
-        <span>
-            🎧
-        </span>
+        <span>📚</span>
 
-        <h3>
-            Focus Music
-        </h3>
+        <h3>Academy</h3>
 
-        <p>
-            Calm sounds for studying.
-        </p>
+        <p>Continue your lessons.</p>
 
     </div>
-
-
-
-
-
 
     <div class="dashboard-card">
 
-        <span>
-            🐾
-        </span>
+        <span>🐾</span>
 
-        <h3>
-            Bloom Pet
-        </h3>
+        <h3>Bloom Pet</h3>
 
-        <p>
-            Take care of your virtual companion.
-        </p>
+        <p>Keep Luna happy.</p>
 
     </div>
 
+    <div class="dashboard-card">
 
+        <span>🌈</span>
+
+        <h3>Mood Board</h3>
+
+        <p>Save inspiration.</p>
+
+    </div>
+
+    <div class="dashboard-card">
+
+        <span>🤖</span>
+
+        <h3>Assistant</h3>
+
+        <p>Ask for help anytime.</p>
+
+    </div>
 
 </section>
 
-
-
-
-
-
-
-
-<!-- =========================
-     QUOTE SECTION
-========================= -->
-
-
-<section class="quote-box">
-
+<section id="quote" class="quote-box">
 
     <h2>
-        🌷 Today's Bloom Quote
+        🌷 Daily Inspiration
     </h2>
 
-
     <p>
-        "Small steps every day create beautiful transformations."
+        "Every masterpiece begins with a single line."
     </p>
 
-
 </section>
-
-<!-- =========================
-     SMART PLANNER SECTION
-========================= -->
 
 <section id="planner" class="feature-section">
 
+    <div class="section-header">
 
-    <h2>
-        📅 My Smart Planner
-    </h2>
+        <h2>📅 Smart Planner</h2>
 
-
-    <p>
-        Organize your goals and bloom every day.
-    </p>
-
-
-
-
-    <!-- ADD TASK -->
-
-    <div class="planner-input">
-
-
-        <input 
-        id="task-input"
-        type="text"
-        placeholder="Add a new task ✨">
-
-
-
-        <button id="add-task">
-            Add +
-        </button>
-
+        <p>
+            Plan, complete and track your daily goals.
+        </p>
 
     </div>
 
+    <div class="planner-input">
 
+        <input
+            id="task-input"
+            type="text"
+            placeholder="Add a new task...">
 
+        <button
+            id="add-task"
+            class="primary-btn">
 
+            Add
 
+        </button>
 
-    <!-- PROGRESS -->
-
+    </div>
 
     <div class="progress-box">
 
-
-        <h3>
-            Daily Progress 🌸
-        </h3>
-
-
+        <h3>Today's Progress</h3>
 
         <div class="progress-bar">
 
@@ -439,631 +287,390 @@
 
         </div>
 
-
-
         <p id="progress-text">
 
             0% Completed
 
         </p>
 
-
     </div>
 
-
-
-
-
-
-    <!-- TASK LIST -->
-
-
-    <ul id="task-list">
-
-    </ul>
-
-
-
-
-
-
-
-    <!-- DAILY PLAN -->
-
-
-    <h2 class="sub-title">
-        🌱 Suggested Daily Flow
-    </h2>
-
-
-
+    <ul id="task-list"></ul>
 
     <div class="planner-box">
 
-
         <div class="task-card">
 
-
-            <h3>
-                🌅 Morning
-            </h3>
-
+            <h3>🌅 Morning</h3>
 
             <ul>
 
-                <li>School / Classes</li>
+                <li>School</li>
 
-                <li>Quick Revision</li>
+                <li>Revision</li>
 
-                <li>Creative Practice</li>
+                <li>Drawing Practice</li>
 
             </ul>
 
-
         </div>
-
-
-
-
-
-
 
         <div class="task-card">
 
-
-            <h3>
-                ☀️ Afternoon
-            </h3>
-
+            <h3>☀ Afternoon</h3>
 
             <ul>
 
-                <li>Study Goals</li>
+                <li>Homework</li>
 
                 <li>Projects</li>
 
-                <li>Learning Time</li>
+                <li>Reading</li>
 
             </ul>
 
-
         </div>
-
-
-
-
-
-
 
         <div class="task-card">
 
-
-            <h3>
-                🌙 Evening
-            </h3>
-
+            <h3>🌙 Evening</h3>
 
             <ul>
 
                 <li>Journal</li>
 
-                <li>Relaxation</li>
+                <li>Tomorrow's Plan</li>
 
-                <li>Tomorrow Planning</li>
+                <li>Relax</li>
 
             </ul>
 
-
         </div>
-
-
 
     </div>
 
-
-
 </section>
-
-
-
-
-
-<!-- =========================
-     JOURNAL SECTION
-========================= -->
-
 
 <section id="journal" class="feature-section">
 
+    <div class="section-header">
 
-    <h2>
-        📖 Bloom Journal
-    </h2>
+        <h2>📖 Bloom Journal</h2>
 
+        <p>
+            Capture your thoughts, memories and ideas.
+        </p>
 
-    <p>
-        Write your thoughts, memories and ideas.
-    </p>
-
-
+    </div>
 
     <div class="journal-container">
 
+        <textarea
+            placeholder="Write today's journal..."></textarea>
 
-        <textarea 
-        placeholder="Dear Bloom Journal... ✨
-Write your thoughts here">
-        </textarea>
+        <div class="toolbar">
 
+            <button class="primary-btn">
+                💾 Save
+            </button>
 
+            <button>
+                📂 Open
+            </button>
 
-        <button class="primary-btn">
+            <button>
+                🗑 Clear
+            </button>
 
-            Save Entry 🌸
-
-        </button>
-
+        </div>
 
     </div>
 
-
-
 </section>
-
-
-<!-- =========================
-     DESIGN STUDIO
-========================= -->
-
 
 <section id="design-studio" class="feature-section">
 
+    <div class="section-header">
 
-<h2>
-🎨 Bloom Design Studio
-</h2>
+        <h2>🎨 Bloom Design Studio</h2>
 
-
-<p>
-Create, sketch and explore your design ideas.
-</p>
-
-
-
-
-
-<div class="canvas-tools">
-
-
-<button id="pencil-tool">
-✏️ Pencil
-</button>
-
-
-<button id="eraser-tool">
-🧽 Eraser
-</button>
-
-
-
-<label>
-
-Brush Size:
-
-<input 
-type="range"
-id="brush-size"
-min="1"
-max="30"
-value="5">
-
-</label>
-
-
-
-<button id="clear-canvas">
-🗑 Clear
-</button>
-
-
-<button id="save-canvas">
-💾 Save
-</button>
-
-
-</div>
-
-
-
-
-
-
-
-<canvas 
-id="drawing-canvas"
-width="800"
-height="450">
-
-</canvas>
-
-
-
-
-
-<div class="design-tools">
-
-
-<div class="design-card">
-
-<h3>
-🏠 Interior Design
-</h3>
-
-<p>
-Practice rooms, furniture and layouts.
-</p>
-
-</div>
-
-
-
-
-<div class="design-card">
-
-<h3>
-🌿 Landscape Design
-</h3>
-
-<p>
-Create gardens and outdoor spaces.
-</p>
-
-</div>
-
-
-
-
-<div class="design-card">
-
-<h3>
-✏️ Sketch Practice
-</h3>
-
-<p>
-Improve from beginner to master.
-</p>
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-<!-- =========================
-     MOOD BOARD
-========================= -->
-
-
-<section class="mood-board">
-
-
-    <h2>
-        🌈 Mood Board
-    </h2>
-
-
-
-    <div class="board-grid">
-
-
-        <div class="board-item">
-            Add Image +
-        </div>
-
-
-        <div class="board-item">
-            Add Color +
-        </div>
-
-
-        <div class="board-item">
-            Add Inspiration +
-        </div>
-
-
-        <div class="board-item">
-            Add Idea +
-        </div>
-
+        <p>
+            Sketch, design and create.
+        </p>
 
     </div>
 
+    <div class="canvas-tools">
 
+        <button id="pencil-tool">
+            ✏ Pencil
+        </button>
 
-</section>
+        <button id="eraser-tool">
+            🧽 Eraser
+        </button>
 
+        <label>
 
+            Brush
 
+            <input
+                id="brush-size"
+                type="range"
+                min="1"
+                max="30"
+                value="5">
 
+        </label>
 
+        <button id="clear-canvas">
+            🗑 Clear
+        </button>
 
-
-
-
-<!-- =========================
-     COLOR PALETTE
-========================= -->
-
-
-<section class="color-section">
-
-
-    <h2>
-        🎨 Color Palette
-    </h2>
-
-
-
-    <div class="colors">
-
-
-        <div class="color-box">
-            🌸
-        </div>
-
-
-        <div class="color-box">
-            🌿
-        </div>
-
-
-        <div class="color-box">
-            ☁️
-        </div>
-
-
-        <div class="color-box">
-            🌻
-        </div>
-
+        <button id="save-canvas">
+            ⬇ Download
+        </button>
 
     </div>
 
+    <canvas
+        id="drawing-canvas"
+        width="900"
+        height="500">
 
+        Your browser does not support HTML5 Canvas.
+
+    </canvas>
 
 </section>
 
+<section id="mood-board" class="feature-section">
 
+    <div class="section-header">
 
+        <h2>🌈 Mood Board</h2>
 
-
-
-
-
-<!-- =========================
-     DRAWING PRACTICE AREA
-========================= -->
-
-
-<section class="drawing-area">
-
-
-    <h2>
-        ✏️ Drawing Practice
-    </h2>
-
-
-    <p>
-        Beginner → Intermediate → Advanced → Master
-    </p>
-
-
-
-
-    <div class="levels">
-
-
-
-        <div class="level-card">
-
-            <h3>
-                🌱 Beginner
-            </h3>
-
-            <p>
-                Lines, shapes and basic forms.
-            </p>
-
-        </div>
-
-
-
-
-        <div class="level-card">
-
-            <h3>
-                🌿 Intermediate
-            </h3>
-
-            <p>
-                Perspective, shading and details.
-            </p>
-
-        </div>
-
-
-
-
-
-        <div class="level-card">
-
-            <h3>
-                🌳 Advanced
-            </h3>
-
-            <p>
-                Interior sketches and landscapes.
-            </p>
-
-        </div>
-
-
-
-
-        <div class="level-card">
-
-            <h3>
-                🌸 Master
-            </h3>
-
-            <p>
-                Professional design concepts.
-            </p>
-
-        </div>
-
-
+        <p>
+            Collect inspiration for your next masterpiece.
+        </p>
 
     </div>
 
+    <div class="mood-controls">
 
+        <input
+            id="image-upload"
+            type="file"
+            accept="image/*">
+
+        <input
+            id="note-input"
+            type="text"
+            placeholder="Write a note...">
+
+        <input
+            id="color-picker"
+            type="color">
+
+        <button id="add-note">
+
+            ➕ Note
+
+        </button>
+
+        <button id="add-color">
+
+            🎨 Colour
+
+        </button>
+
+    </div>
+
+    <div
+        id="board-grid"
+        class="board-grid">
+
+    </div>
+
+</section>
+
+<section id="design-academy" class="feature-section">
+
+    <div class="section-header">
+
+        <h2>🎓 Bloom Design Academy</h2>
+
+        <p>
+            Learn step by step from Beginner to Master.
+        </p>
+
+    </div>
+
+    <div class="academy-path">
+
+        <div class="academy-level active">
+
+            <h3>🌱 Beginner</h3>
+
+            <p>Lines & Shapes</p>
+
+        </div>
+
+        <div class="academy-level">
+
+            <h3>🌿 Intermediate</h3>
+
+            <p>Perspective</p>
+
+        </div>
+
+        <div class="academy-level">
+
+            <h3>🌳 Advanced</h3>
+
+            <p>Interior Design</p>
+
+        </div>
+
+        <div class="academy-level">
+
+            <h3>👑 Master</h3>
+
+            <p>Portfolio Projects</p>
+
+        </div>
+
+    </div>
+
+    <div class="module-grid">
+
+        <div class="module-card">
+
+            <h4>📐 Shapes</h4>
+
+            <p>Master the basics.</p>
+
+        </div>
+
+        <div class="module-card">
+
+            <h4>🖊 Perspective</h4>
+
+            <p>One & two-point perspective.</p>
+
+        </div>
+
+        <div class="module-card">
+
+            <h4>🏠 Interior</h4>
+
+            <p>Rooms and furniture.</p>
+
+        </div>
+
+        <div class="module-card">
+
+            <h4>🌿 Landscape</h4>
+
+            <p>Gardens and outdoor spaces.</p>
+
+        </div>
+
+        <div class="module-card">
+
+            <h4>🎨 Colour Theory</h4>
+
+            <p>Learn harmony and contrast.</p>
+
+        </div>
+
+        <div class="module-card">
+
+            <h4>🏆 Final Projects</h4>
+
+            <p>Create portfolio-ready work.</p>
+
+        </div>
+
+    </div>
 
 </section>
 
 <!-- =========================
-     MUSIC SECTION
+     MUSIC
 ========================= -->
-
 
 <section id="music" class="feature-section">
 
+    <div class="section-header">
 
-    <h2>
-        🎵 Bloom Music
-    </h2>
+        <h2>🎵 Bloom Music</h2>
 
-
-    <p>
-        Relax, focus and create with your favourite sounds.
-    </p>
-
-
-
-    <div class="music-container">
-
-
-
-        <div class="music-card">
-
-
-            <h3>
-                🎧 Focus Mode
-            </h3>
-
-
-            <p>
-                Study music for concentration.
-            </p>
-
-
-            <button class="music-btn">
-                ▶ Play
-            </button>
-
-
-        </div>
-
-
-
-
-
-        <div class="music-card">
-
-
-            <h3>
-                🌧 Calm Rain
-            </h3>
-
-
-            <p>
-                Peaceful sounds for relaxation.
-            </p>
-
-
-            <button class="music-btn">
-                ▶ Play
-            </button>
-
-
-        </div>
-
-
-
-
-
-        <div class="music-card">
-
-
-            <h3>
-                🌸 Creativity Mode
-            </h3>
-
-
-            <p>
-                Music while designing and drawing.
-            </p>
-
-
-            <button class="music-btn">
-                ▶ Play
-            </button>
-
-
-        </div>
-
-
+        <p>
+            Relax, study and create with your favourite sounds.
+        </p>
 
     </div>
 
+    <div class="music-container">
 
+        <div class="music-card">
+
+            <h3>🎧 Focus Mode</h3>
+
+            <p>Perfect for studying.</p>
+
+            <button class="music-btn">
+                ▶ Play
+            </button>
+
+        </div>
+
+        <div class="music-card">
+
+            <h3>🌧 Rain Sounds</h3>
+
+            <p>Peaceful ambience.</p>
+
+            <button class="music-btn">
+                ▶ Play
+            </button>
+
+        </div>
+
+        <div class="music-card">
+
+            <h3>🎹 Piano</h3>
+
+            <p>Calm instrumental music.</p>
+
+            <button class="music-btn">
+                ▶ Play
+            </button>
+
+        </div>
+
+    </div>
 
 </section>
 
-
-
-
-
-
-
-
-
 <!-- =========================
-     BLOOM PET SECTION
+     BLOOM PET
 ========================= -->
-
 
 <section id="bloom-pet" class="feature-section">
 
+    <div class="section-header">
 
-    <h2>
-        🐾 Bloom Pet
-    </h2>
+        <h2>🐾 Bloom Pet</h2>
 
+        <p>
+            Grow your companion as you learn.
+        </p>
 
-    <p>
-        Take care of your virtual creative companion.
-    </p>
-
-
-
+    </div>
 
     <div class="pet-container">
-
-
 
         <div class="pet-avatar">
 
@@ -1071,316 +678,155 @@ Improve from beginner to master.
 
         </div>
 
-
-
-
         <div class="pet-info">
 
+            <h3>Luna</h3>
 
-            <h3>
-                Luna the Bloom Cat
-            </h3>
+            <p>Level 1</p>
 
+            <p>❤️ Happiness</p>
 
-            <p>
-                Level: 1 🌱
-            </p>
+            <div class="progress-bar">
+                <div style="width:70%;"></div>
+            </div>
 
+            <p>⚡ Energy</p>
 
-            <p>
-                Happiness: ⭐⭐⭐☆☆
-            </p>
+            <div class="progress-bar">
+                <div style="width:80%;"></div>
+            </div>
 
+            <div class="toolbar">
 
-            <p>
-                Energy: ⭐⭐⭐⭐☆
-            </p>
+                <button class="primary-btn">
+                    🍎 Feed
+                </button>
 
+                <button>
+                    🎾 Play
+                </button>
 
+                <button>
+                    😴 Rest
+                </button>
 
-            <button class="primary-btn">
-
-                Feed Pet 🍎
-
-            </button>
-
-
-
-            <button class="primary-btn">
-
-                Play 🎾
-
-            </button>
-
+            </div>
 
         </div>
 
-
-
     </div>
-
-
 
 </section>
 
-
-
-
-
-
-
-
-
 <!-- =========================
-     FRIENDS SECTION
+     COMMUNITY HUB
 ========================= -->
 
+<section id="community" class="feature-section">
 
-<section id="friends" class="feature-section">
+    <div class="section-header">
 
+        <h2>👥 Community Hub</h2>
 
-    <h2>
-        👥 Friends
-    </h2>
+        <p>
+            Friends, clubs and chats in one place.
+        </p>
 
-
-    <p>
-        Connect, share ideas and grow together.
-    </p>
-
-
-
+    </div>
 
     <div class="friends-grid">
 
-
-
         <div class="friend-card">
-
 
             <div class="friend-icon">
                 👩🏻
             </div>
 
-
-            <h3>
-                Creative Friend
-            </h3>
-
-
-            <p>
-                Design Partner
-            </p>
-
+            <h3>Creative Partner</h3>
 
             <button>
-                Chat 💬
+                Chat
             </button>
-
 
         </div>
 
-
-
-
-
         <div class="friend-card">
-
 
             <div class="friend-icon">
                 👨🏻
             </div>
 
-
-            <h3>
-                Study Friend
-            </h3>
-
-
-            <p>
-                Revision Partner
-            </p>
-
+            <h3>Study Partner</h3>
 
             <button>
-                Chat 💬
+                Chat
             </button>
-
 
         </div>
 
-
-
-
-
         <div class="friend-card">
-
 
             <div class="friend-icon">
                 🌸
             </div>
 
-
-            <h3>
-                Bloom Community
-            </h3>
-
-
-            <p>
-                Creative Members
-            </p>
-
+            <h3>Bloom Club</h3>
 
             <button>
-                Join 🌱
+                Join
             </button>
-
 
         </div>
 
-
-
     </div>
-
-
-
-</section>
-
-
-
-
-
-
-
-
-
-<!-- =========================
-     GROUP CHAT SECTION
-========================= -->
-
-
-<section class="chat-section">
-
-
-    <h2>
-        💬 Group Chat
-    </h2>
-
-
 
     <div class="chat-box">
 
+        <h3>💬 Community Chat</h3>
 
         <div class="message">
 
-            🌸 Welcome to Bloom Club!
+            🌸 Welcome to Bloom Studio!
 
         </div>
-
-
 
         <div class="message">
 
-            🎨 Share your latest designs here.
+            🎨 Share your latest designs.
 
         </div>
 
-
-
-        <input 
-        type="text"
-        placeholder="Write a message...">
-
+        <input
+            type="text"
+            placeholder="Write a message...">
 
         <button>
+
             Send
+
         </button>
 
-
-
     </div>
-
-
-
-</section>
-
-
-
-
-
-
-
-
-
-<!-- =========================
-     COMMUNITY SECTION
-========================= -->
-
-
-<section class="community-section">
-
-
-    <h2>
-        🌱 Bloom Community
-    </h2>
-
-
-
-    <div class="community-cards">
-
-
-        <div>
-
-            🎨 Design Challenges
-
-        </div>
-
-
-
-        <div>
-
-            📚 Study Rooms
-
-        </div>
-
-
-
-        <div>
-
-            🌎 Creative Clubs
-
-        </div>
-
-
-
-    </div>
-
-
 
 </section>
 
 <!-- =========================
-     BLOOM ASSISTANT SECTION
+     ASSISTANT
 ========================= -->
-
 
 <section id="assistant" class="feature-section">
 
+    <div class="section-header">
 
-    <h2>
-        🤖 Bloom Assistant
-    </h2>
+        <h2>🤖 Bloom Assistant</h2>
 
+        <p>
+            Your study and design companion.
+        </p>
 
-    <p>
-        Your creative and study companion.
-    </p>
-
-
-
+    </div>
 
     <div class="assistant-box">
-
 
         <div class="assistant-avatar">
 
@@ -1388,290 +834,151 @@ Improve from beginner to master.
 
         </div>
 
-
-
         <div class="assistant-content">
 
-
             <h3>
-                Hello Creator! ✨
+
+                Hello Creator!
+
             </h3>
 
-
             <p>
-                How can I help you today?
+
+                What would you like to learn today?
+
             </p>
-
-
 
             <div class="assistant-options">
 
+                <button>📚 Study</button>
 
-                <button>
-                    📚 Study Help
-                </button>
+                <button>🎨 Design</button>
 
+                <button>💡 Ideas</button>
 
-                <button>
-                    🎨 Design Mentor
-                </button>
-
-
-                <button>
-                    💡 Ideas
-                </button>
-
-
-                <button>
-                    🌱 Motivation
-                </button>
-
-
+                <button>🌱 Motivation</button>
 
             </div>
 
-
         </div>
-
 
     </div>
 
-
 </section>
-
-
-
-
-
-
-
-
 
 <!-- =========================
      BLOOM JOURNEY
 ========================= -->
 
+<section id="journey" class="feature-section">
 
-<section class="journey-section">
+    <div class="section-header">
 
+        <h2>🌸 My Bloom Journey</h2>
 
-    <h2>
-        🌸 My Bloom Journey
-    </h2>
-
-
+    </div>
 
     <div class="journey-cards">
 
-
-
         <div class="journey-card">
 
+            <h3>🔥 Streak</h3>
 
-            <h3>
-                🔥 Streak
-            </h3>
-
-
-            <p>
-                0 Days
-            </p>
-
+            <p>0 Days</p>
 
         </div>
 
-
-
-
-
         <div class="journey-card">
 
+            <h3>🎨 Designs</h3>
 
-            <h3>
-                📚 Learning
-            </h3>
-
-
-            <p>
-                Beginner Level
-            </p>
-
+            <p>0</p>
 
         </div>
 
-
-
-
-
         <div class="journey-card">
 
+            <h3>📚 Lessons</h3>
 
-            <h3>
-                🎨 Creativity
-            </h3>
-
-
-            <p>
-                0 Designs
-            </p>
-
+            <p>Beginner</p>
 
         </div>
 
-
-
-
-
         <div class="journey-card">
 
+            <h3>🏆 Achievements</h3>
 
-            <h3>
-                🐾 Pet Level
-            </h3>
-
-
-            <p>
-                Level 1
-            </p>
-
+            <p>0</p>
 
         </div>
-
 
     </div>
-
-
 
 </section>
 
-
-
-
-
-
-
-
-
 <!-- =========================
-     SETTINGS SECTION
+     SETTINGS
 ========================= -->
-
 
 <section id="settings" class="feature-section">
 
+    <div class="section-header">
 
-    <h2>
-        ⚙️ Settings
-    </h2>
-
-
-
-
-    <div class="settings-box">
-
-
-
-        <div class="setting-item">
-
-
-            <h3>
-                🌙 Theme
-            </h3>
-
-
-            <button>
-                Light Mode
-            </button>
-
-
-            <button>
-                Dark Mode
-            </button>
-
-
-        </div>
-
-
-
-
-
-
-        <div class="setting-item">
-
-
-            <h3>
-                🔔 Notifications
-            </h3>
-
-
-            <label>
-
-                <input type="checkbox">
-
-                Enable Reminders
-
-            </label>
-
-
-        </div>
-
-
-
-
-
-
-
-        <div class="setting-item">
-
-
-            <h3>
-                🎵 Music
-            </h3>
-
-
-            <label>
-
-                <input type="checkbox">
-
-                Auto Play Music
-
-            </label>
-
-
-        </div>
-
-<div class="setting-item">
-
-    <h3>
-        🔐 Privacy
-    </h3>
-
-    <label>
-
-        <input type="checkbox">
-
-        Private Profile
-
-    </label>
-
-
-    <br><br>
-
-
-    <label>
-
-        <input type="checkbox">
-
-        Save Data Locally
-
-    </label>
-
-
-</div>
+        <h2>⚙️ Settings</h2>
 
     </div>
 
+    <div class="settings-box">
 
+        <div class="setting-item">
+
+            <h3>🎨 Theme</h3>
+
+            <button>🌞 Light</button>
+
+            <button>🌙 Dark</button>
+
+        </div>
+
+        <div class="setting-item">
+
+            <h3>🔔 Notifications</h3>
+
+            <label>
+
+                <input type="checkbox">
+
+                Enable reminders
+
+            </label>
+
+        </div>
+
+        <div class="setting-item">
+
+            <h3>🔐 Privacy</h3>
+
+            <label>
+
+                <input type="checkbox">
+
+                Private profile
+
+            </label>
+
+            <br><br>
+
+            <label>
+
+                <input type="checkbox">
+
+                Save data locally
+
+            </label>
+
+        </div>
+
+    </div>
 
 </section>
 
@@ -1679,40 +986,32 @@ Improve from beginner to master.
      FOOTER
 ========================= -->
 
-
 <footer class="footer">
 
-
     <h2>
+
         🌸 Bloom Studio
+
     </h2>
 
-
     <p>
+
         Grow • Create • Learn • Bloom
-    </p>
 
+    </p>
 
     <p>
-        © 2026 Bloom Studio. All Rights Reserved.
+
+        © 2026 Bloom Studio
+
     </p>
-
-
 
 </footer>
 
-
-
-
-
-
 </main>
-
 
 <script src="app.js"></script>
 
-
 </body>
-
 
 </html>
