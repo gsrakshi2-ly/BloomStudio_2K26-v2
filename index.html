@@ -379,20 +379,102 @@
 </section>
 
 <!-- =========================
-     PLANNER SECTION
+     SMART PLANNER SECTION
 ========================= -->
 
 <section id="planner" class="feature-section">
 
 
     <h2>
-        📅 My Planner
+        📅 My Smart Planner
     </h2>
 
 
     <p>
-        Plan your day, track goals and stay productive.
+        Organize your goals and bloom every day.
     </p>
+
+
+
+
+    <!-- ADD TASK -->
+
+    <div class="planner-input">
+
+
+        <input 
+        id="task-input"
+        type="text"
+        placeholder="Add a new task ✨">
+
+
+
+        <button id="add-task">
+            Add +
+        </button>
+
+
+    </div>
+
+
+
+
+
+
+    <!-- PROGRESS -->
+
+
+    <div class="progress-box">
+
+
+        <h3>
+            Daily Progress 🌸
+        </h3>
+
+
+
+        <div class="progress-bar">
+
+            <div id="progress-fill"></div>
+
+        </div>
+
+
+
+        <p id="progress-text">
+
+            0% Completed
+
+        </p>
+
+
+    </div>
+
+
+
+
+
+
+    <!-- TASK LIST -->
+
+
+    <ul id="task-list">
+
+    </ul>
+
+
+
+
+
+
+
+    <!-- DAILY PLAN -->
+
+
+    <h2 class="sub-title">
+        🌱 Suggested Daily Flow
+    </h2>
+
 
 
 
@@ -401,30 +483,38 @@
 
         <div class="task-card">
 
+
             <h3>
                 🌅 Morning
             </h3>
+
 
             <ul>
 
                 <li>School / Classes</li>
 
-                <li>Revision</li>
+                <li>Quick Revision</li>
 
                 <li>Creative Practice</li>
 
             </ul>
+
 
         </div>
 
 
 
 
+
+
+
         <div class="task-card">
+
 
             <h3>
                 ☀️ Afternoon
             </h3>
+
 
             <ul>
 
@@ -436,16 +526,22 @@
 
             </ul>
 
+
         </div>
+
+
+
 
 
 
 
         <div class="task-card">
 
+
             <h3>
                 🌙 Evening
             </h3>
+
 
             <ul>
 
@@ -457,16 +553,16 @@
 
             </ul>
 
+
         </div>
+
 
 
     </div>
 
 
+
 </section>
-
-
-
 
 
 
@@ -1517,80 +1613,40 @@ Write your thoughts here">
 
         </div>
 
+<div class="setting-item">
+
+    <h3>
+        🔐 Privacy
+    </h3>
+
+    <label>
+
+        <input type="checkbox">
+
+        Private Profile
+
+    </label>
 
 
-    </div>
+    <br><br>
 
 
+    <label>
 
-</section>
+        <input type="checkbox">
 
+        Save Data Locally
 
-
-
-
-
-
+    </label>
 
 
-<!-- =========================
-     SAFETY FEATURES
-========================= -->
-
-
-<section class="safety-section">
-
-
-    <h2>
-        🔒 Safety & Privacy
-    </h2>
-
-
-
-    <div class="safety-cards">
-
-
-        <div>
-
-            🚨 Emergency Button
-
-        </div>
-
-
-        <div>
-
-            👨‍👩‍👧 Trusted Contacts
-
-        </div>
-
-
-        <div>
-
-            🔐 Privacy Controls
-
-        </div>
-
-
-        <div>
-
-            📍 Permission Based Sharing
-
-        </div>
-
+</div>
 
     </div>
 
 
 
 </section>
-
-
-
-
-
-
-
-
 
 <!-- =========================
      FOOTER

@@ -586,3 +586,271 @@ console.log(
 
 
 };
+
+/* =========================
+   SMART PLANNER SYSTEM
+========================= */
+
+
+let tasks =
+JSON.parse(
+localStorage.getItem("BloomTasks")
+)
+||
+[];
+
+
+
+
+const taskInput =
+document.getElementById(
+"task-input"
+);
+
+
+
+const addTask =
+document.getElementById(
+"add-task"
+);
+
+
+
+const taskList =
+document.getElementById(
+"task-list"
+);
+
+
+
+const progressFill =
+document.getElementById(
+"progress-fill"
+);
+
+
+
+const progressText =
+document.getElementById(
+"progress-text"
+);
+
+
+
+
+
+function saveTasks(){
+
+localStorage.setItem(
+"BloomTasks",
+JSON.stringify(tasks)
+);
+
+}
+
+
+
+
+
+
+function updateProgress(){
+
+
+let completed =
+tasks.filter(
+task=>task.done
+).length;
+
+
+
+let percent =
+tasks.length
+?
+Math.round(
+(completed/tasks.length)*100
+)
+:
+0;
+
+
+
+progressFill.style.width =
+percent+"%";
+
+
+
+progressText.innerHTML =
+percent+
+"% Completed 🌸";
+
+
+}
+
+
+
+
+
+
+
+function displayTasks(){
+
+
+taskList.innerHTML="";
+
+
+
+tasks.forEach(
+(task,index)=>{
+
+
+let li =
+document.createElement(
+"li"
+);
+
+
+
+li.className =
+"task-item";
+
+
+
+if(task.done){
+
+li.classList.add(
+"completed"
+);
+
+}
+
+
+
+li.innerHTML = `
+
+<span>
+${task.text}
+</span>
+
+
+<div class="task-buttons">
+
+<button onclick="completeTask(${index})">
+✓
+</button>
+
+
+<button onclick="deleteTask(${index})">
+🗑
+</button>
+
+
+</div>
+
+`;
+
+
+
+taskList.appendChild(li);
+
+
+
+});
+
+
+
+updateProgress();
+
+}
+
+
+
+
+
+
+
+addTask.addEventListener(
+"click",
+()=>{
+
+
+let text =
+taskInput.value.trim();
+
+
+
+if(text){
+
+
+tasks.push({
+
+text:text,
+
+done:false
+
+});
+
+
+
+taskInput.value="";
+
+
+saveTasks();
+
+
+displayTasks();
+
+
+}
+
+
+});
+
+
+
+
+
+
+
+function completeTask(index){
+
+
+tasks[index].done =
+!tasks[index].done;
+
+
+
+saveTasks();
+
+
+displayTasks();
+
+
+}
+
+
+
+
+
+
+
+function deleteTask(index){
+
+
+tasks.splice(
+index,
+1
+);
+
+
+saveTasks();
+
+
+displayTasks();
+
+
+}
+
+
+
+
+displayTasks();
