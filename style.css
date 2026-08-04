@@ -1845,3 +1845,61 @@ cursor:pointer;
     margin-top:30px;
     margin-bottom:20px;
 }
+
+/* =========================
+   DESIGN CANVAS
+========================= */
+
+
+.canvas-tools{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:15px;
+
+margin:25px 0;
+
+}
+
+
+
+.canvas-tools button{
+
+border:none;
+
+padding:12px 20px;
+
+border-radius:20px;
+
+background:#ffd6e8;
+
+cursor:pointer;
+
+}
+
+
+
+.canvas-tools input{
+
+cursor:pointer;
+
+}
+
+
+
+#drawing-canvas{
+
+background:white;
+
+border-radius:25px;
+
+box-shadow:
+0 10px 25px rgba(0,0,0,.08);
+
+max-width:100%;
+
+cursor:crosshair;
+
+}
