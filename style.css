@@ -1,0 +1,1727 @@
+/* =========================
+   BLOOM STUDIO STYLE.CSS
+   PART 2A
+========================= */
+
+
+
+/* =========================
+   RESET
+========================= */
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: "Poppins", "Segoe UI", sans-serif;
+
+}
+
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+
+
+body {
+
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #fff0f6,
+        #f0fff4
+    );
+
+    color: #444;
+
+}
+
+
+
+/* =========================
+   TOP NAVIGATION
+========================= */
+
+
+.topbar {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 70px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 0 30px;
+
+    background: rgba(255,255,255,0.75);
+
+    backdrop-filter: blur(15px);
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+
+    z-index: 1000;
+
+}
+
+
+
+
+.logo {
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    color: #d85b91;
+
+}
+
+
+
+
+.top-actions {
+
+    display: flex;
+
+    gap: 15px;
+
+}
+
+
+
+.top-actions button {
+
+    border: none;
+
+    background: #ffe4ef;
+
+    padding: 10px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    transition: 0.3s;
+
+}
+
+
+
+.top-actions button:hover {
+
+    transform: scale(1.1);
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+
+.sidebar {
+
+    position: fixed;
+
+    top: 70px;
+
+    left: 0;
+
+    width: 230px;
+
+    height: calc(100vh - 70px);
+
+    background: rgba(255,255,255,0.75);
+
+    backdrop-filter: blur(15px);
+
+    padding: 25px 15px;
+
+    box-shadow: 5px 0 20px rgba(0,0,0,0.05);
+
+}
+
+
+
+.sidebar nav {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+}
+
+
+
+
+
+.nav-item {
+
+    border: none;
+
+    background: transparent;
+
+    padding: 14px;
+
+    text-align: left;
+
+    border-radius: 15px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+
+
+.nav-item:hover,
+.nav-item.active {
+
+    background: #ffd6e8;
+
+    color: #c43c78;
+
+    transform: translateX(5px);
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+
+.main-content {
+
+    margin-left: 230px;
+
+    padding: 100px 35px 40px;
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+
+.hero {
+
+    min-height: 350px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 45px;
+
+    border-radius: 35px;
+
+    background: linear-gradient(
+        135deg,
+        #ffd6e8,
+        #dcffe8
+    );
+
+    margin-bottom: 30px;
+
+}
+
+
+
+.hero-text h1 {
+
+    font-size: 42px;
+
+    color: #b83b70;
+
+    margin-bottom: 15px;
+
+}
+
+
+
+
+.hero-text p {
+
+    font-size: 18px;
+
+    max-width: 500px;
+
+    line-height: 1.6;
+
+}
+
+
+
+
+.hero-image {
+
+    font-size: 120px;
+
+    animation: float 3s infinite ease-in-out;
+
+}
+
+
+
+
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+
+.primary-btn {
+
+    margin-top: 20px;
+
+    padding: 12px 25px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: #d85b91;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+
+}
+
+
+
+.primary-btn:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 20px rgba(216,91,145,0.3);
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+
+@keyframes float {
+
+    0%,100% {
+
+        transform: translateY(0);
+
+    }
+
+
+    50% {
+
+        transform: translateY(-15px);
+
+    }
+
+}
+
+/* =========================
+   PART 2B
+   CARDS + CREATIVE SECTIONS
+========================= */
+
+
+
+
+
+/* =========================
+   WELCOME CARD
+========================= */
+
+
+.welcome-card {
+
+    background: rgba(255,255,255,0.8);
+
+    backdrop-filter: blur(12px);
+
+    padding: 30px;
+
+    border-radius: 30px;
+
+    margin-bottom: 35px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+
+}
+
+
+
+.welcome-card h2 {
+
+    color: #c43c78;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.welcome-card p {
+
+    margin-bottom: 20px;
+
+}
+
+
+
+
+
+.stats {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 20px;
+
+}
+
+
+
+.stat-card {
+
+    background: #fff4f8;
+
+    padding: 20px;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    transition: .3s;
+
+}
+
+
+
+.stat-card:hover {
+
+    transform: translateY(-5px);
+
+}
+
+
+
+
+
+.stat-card h3 {
+
+    font-size: 25px;
+
+    color: #d85b91;
+
+}
+
+
+
+
+
+/* =========================
+   DASHBOARD CARDS
+========================= */
+
+
+.dashboard {
+
+    display: grid;
+
+    grid-template-columns: repeat(4,1fr);
+
+    gap: 20px;
+
+    margin-bottom: 40px;
+
+}
+
+
+
+
+.dashboard-card {
+
+    background: rgba(255,255,255,.85);
+
+    padding: 25px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,.06);
+
+    transition: .3s;
+
+}
+
+
+
+.dashboard-card:hover {
+
+    transform: translateY(-8px);
+
+}
+
+
+
+.dashboard-card span {
+
+    font-size: 35px;
+
+}
+
+
+
+.dashboard-card h3 {
+
+    margin: 15px 0;
+
+    color:#c43c78;
+
+}
+
+
+
+
+
+
+
+/* =========================
+   QUOTE BOX
+========================= */
+
+
+.quote-box {
+
+    background: linear-gradient(
+        135deg,
+        #fff0f6,
+        #eaffef
+    );
+
+    padding:35px;
+
+    border-radius:30px;
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+
+
+.quote-box h2 {
+
+    color:#c43c78;
+
+    margin-bottom:15px;
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+   FEATURE SECTIONS
+========================= */
+
+
+.feature-section,
+.mood-board,
+.color-section,
+.drawing-area {
+
+    background:rgba(255,255,255,.75);
+
+    padding:35px;
+
+    border-radius:30px;
+
+    margin-bottom:35px;
+
+}
+
+
+
+.feature-section h2,
+.mood-board h2,
+.color-section h2,
+.drawing-area h2 {
+
+    color:#c43c78;
+
+    margin-bottom:15px;
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+   PLANNER
+========================= */
+
+
+.planner-box {
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+    margin-top:25px;
+
+}
+
+
+
+.task-card {
+
+    background:#fff4f8;
+
+    padding:25px;
+
+    border-radius:25px;
+
+}
+
+
+
+.task-card h3 {
+
+    color:#d85b91;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.task-card li {
+
+    margin:10px 0;
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+   JOURNAL
+========================= */
+
+
+.journal-container {
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+
+
+.journal-container textarea {
+
+    width:100%;
+
+    height:200px;
+
+    border:none;
+
+    border-radius:20px;
+
+    padding:20px;
+
+    resize:none;
+
+    background:#fff7fb;
+
+    font-size:16px;
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+   DESIGN STUDIO
+========================= */
+
+
+.design-tools {
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+    margin-top:25px;
+
+}
+
+
+
+
+.design-card {
+
+    background:#f5fff8;
+
+    padding:25px;
+
+    border-radius:25px;
+
+    transition:.3s;
+
+}
+
+
+
+.design-card:hover {
+
+    transform:translateY(-6px);
+
+}
+
+
+
+.design-card h3 {
+
+    color:#3c9b64;
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+   MOOD BOARD
+========================= */
+
+
+.board-grid {
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+
+
+.board-item {
+
+    height:150px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:20px;
+
+    background:#fff4f8;
+
+    border:2px dashed #e8a6c3;
+
+}
+
+
+
+
+
+
+
+/* =========================
+   COLOR PALETTE
+========================= */
+
+
+.colors {
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+
+
+.color-box {
+
+    height:80px;
+
+    width:80px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#ffe0ed;
+
+    font-size:30px;
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+   DRAWING LEVELS
+========================= */
+
+
+.levels {
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+}
+
+
+
+.level-card {
+
+    background:#f4fff7;
+
+    padding:25px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+}
+
+
+
+.level-card h3 {
+
+    color:#3c9b64;
+
+}
+
+/* =========================
+   PART 2C
+   MUSIC + PET + COMMUNITY
+========================= */
+
+
+
+
+
+/* =========================
+   MUSIC SECTION
+========================= */
+
+
+.music-container {
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+    margin-top:25px;
+
+}
+
+
+
+.music-card {
+
+    background:#fff4f8;
+
+    padding:25px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+
+
+.music-card:hover {
+
+    transform:translateY(-6px);
+
+}
+
+
+
+.music-card h3 {
+
+    color:#c43c78;
+
+    margin-bottom:10px;
+
+}
+
+
+
+.music-btn {
+
+    margin-top:15px;
+
+    padding:10px 25px;
+
+    border:none;
+
+    border-radius:20px;
+
+    background:#d85b91;
+
+    color:white;
+
+    cursor:pointer;
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+   BLOOM PET
+========================= */
+
+
+.pet-container {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:40px;
+
+    background:#f5fff8;
+
+    padding:30px;
+
+    border-radius:30px;
+
+}
+
+
+
+.pet-avatar {
+
+    height:160px;
+
+    width:160px;
+
+    border-radius:50%;
+
+    background:#fff0f6;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:80px;
+
+}
+
+
+
+.pet-info h3 {
+
+    color:#3c9b64;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.pet-info p {
+
+    margin:8px 0;
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================
+   FRIENDS SECTION
+========================= */
+
+
+.friends-grid {
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+    margin-top:25px;
+
+}
+
+
+
+.friend-card {
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.05);
+
+}
+
+
+
+.friend-icon {
+
+    font-size:45px;
+
+}
+
+
+
+.friend-card h3 {
+
+    color:#c43c78;
+
+    margin:15px 0;
+
+}
+
+
+
+.friend-card button {
+
+    border:none;
+
+    padding:10px 20px;
+
+    border-radius:20px;
+
+    background:#ffd6e8;
+
+    cursor:pointer;
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+   CHAT SECTION
+========================= */
+
+
+.chat-section {
+
+    background:rgba(255,255,255,.8);
+
+    padding:35px;
+
+    border-radius:30px;
+
+    margin-bottom:35px;
+
+}
+
+
+
+.chat-box {
+
+    background:#fff7fb;
+
+    padding:25px;
+
+    border-radius:25px;
+
+}
+
+
+
+.message {
+
+    background:#ffe4ef;
+
+    padding:12px;
+
+    border-radius:15px;
+
+    margin-bottom:10px;
+
+    width:max-content;
+
+}
+
+
+
+.chat-box input {
+
+    width:75%;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:20px;
+
+    margin-top:15px;
+
+}
+
+
+
+.chat-box button {
+
+    padding:12px 20px;
+
+    border:none;
+
+    border-radius:20px;
+
+    background:#d85b91;
+
+    color:white;
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+   COMMUNITY
+========================= */
+
+
+.community-section {
+
+    background:#f5fff8;
+
+    padding:35px;
+
+    border-radius:30px;
+
+    margin-bottom:35px;
+
+}
+
+
+
+.community-cards {
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+
+    margin-top:20px;
+
+}
+
+
+
+.community-cards div {
+
+    background:white;
+
+    padding:25px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+    font-size:18px;
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+   ASSISTANT
+========================= */
+
+
+.assistant-box {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:30px;
+
+    background:#fff4f8;
+
+    padding:30px;
+
+    border-radius:30px;
+
+}
+
+
+
+.assistant-avatar {
+
+    font-size:80px;
+
+}
+
+
+
+.assistant-content h3 {
+
+    color:#c43c78;
+
+}
+
+
+
+.assistant-options {
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin-top:20px;
+
+}
+
+
+
+.assistant-options button {
+
+    border:none;
+
+    background:#ffd6e8;
+
+    padding:12px 18px;
+
+    border-radius:20px;
+
+    cursor:pointer;
+
+}
+
+/* =========================
+   PART 2D
+   FINAL POLISH
+========================= */
+
+
+
+
+
+/* =========================
+   JOURNEY SECTION
+========================= */
+
+
+.journey-section {
+
+    background:rgba(255,255,255,.8);
+
+    padding:35px;
+
+    border-radius:30px;
+
+    margin-bottom:35px;
+
+}
+
+
+
+.journey-section h2 {
+
+    color:#c43c78;
+
+}
+
+
+
+.journey-cards {
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+    margin-top:25px;
+
+}
+
+
+
+.journey-card {
+
+    background:#fff4f8;
+
+    padding:25px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+}
+
+
+
+.journey-card h3 {
+
+    color:#d85b91;
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+   SETTINGS
+========================= */
+
+
+.settings-box {
+
+    display:grid;
+
+    gap:20px;
+
+}
+
+
+
+.setting-item {
+
+    background:#f5fff8;
+
+    padding:25px;
+
+    border-radius:25px;
+
+}
+
+
+
+.setting-item h3 {
+
+    color:#3c9b64;
+
+    margin-bottom:15px;
+
+}
+
+
+
+.setting-item button {
+
+    padding:10px 20px;
+
+    border:none;
+
+    border-radius:20px;
+
+    background:#ffd6e8;
+
+    cursor:pointer;
+
+    margin-right:10px;
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+   SAFETY SECTION
+========================= */
+
+
+.safety-section {
+
+    background:#fff4f8;
+
+    padding:35px;
+
+    border-radius:30px;
+
+    margin-bottom:35px;
+
+}
+
+
+
+.safety-cards {
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+
+    margin-top:20px;
+
+}
+
+
+
+.safety-cards div {
+
+    background:white;
+
+    padding:25px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+   FOOTER
+========================= */
+
+
+.footer {
+
+    text-align:center;
+
+    padding:40px;
+
+    background:#ffd6e8;
+
+    border-radius:35px 35px 0 0;
+
+    margin-top:50px;
+
+}
+
+
+
+.footer h2 {
+
+    color:#c43c78;
+
+    margin-bottom:10px;
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+   EXTRA ANIMATIONS
+========================= */
+
+
+.dashboard-card,
+.design-card,
+.friend-card,
+.music-card,
+.level-card,
+.journey-card {
+
+    animation:fadeUp .6s ease;
+
+}
+
+
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+
+    to {
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+
+
+
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+
+@media(max-width:900px) {
+
+
+    .sidebar {
+
+        width:80px;
+
+    }
+
+
+    .nav-item {
+
+        font-size:0;
+
+        text-align:center;
+
+    }
+
+
+    .main-content {
+
+        margin-left:80px;
+
+        padding:90px 20px;
+
+    }
+
+
+
+    .hero {
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+
+
+    .stats,
+    .dashboard,
+    .planner-box,
+    .design-tools,
+    .music-container,
+    .friends-grid,
+    .community-cards,
+    .levels,
+    .journey-cards,
+    .safety-cards {
+
+        grid-template-columns:1fr;
+
+    }
+
+
+
+    .assistant-box,
+    .pet-container {
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+
+
+}
+
+
+
+
+@media(max-width:600px) {
+
+
+    .topbar {
+
+        padding:0 15px;
+
+    }
+
+
+    .logo {
+
+        font-size:18px;
+
+    }
+
+
+    .main-content {
+
+        margin-left:0;
+
+    }
+
+
+    .sidebar {
+
+        display:none;
+
+    }
+
+
+    .hero-text h1 {
+
+        font-size:30px;
+
+    }
+
+
+}
