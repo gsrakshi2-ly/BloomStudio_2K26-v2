@@ -1725,3 +1725,27 @@ body {
 
 
 }
+
+/* =========================
+   DATE STYLE
+========================= */
+
+
+#today-date{
+
+    color:#888;
+
+    margin-top:10px;
+
+    font-size:15px;
+
+}
+
+
+
+
+section{
+
+    scroll-margin-top:90px;
+
+}
